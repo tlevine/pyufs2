@@ -14,10 +14,16 @@ CLASSNAMES = {
     '.h-review-aggregate': {},
 }
 
+def parse_item(item):
+    return {
+        'type': item.attrib['class'],
+        'properties': {},
+    }
+
 def parse(fp):
     html = lxml.html.parse(fp).getroot()
-    print html.cssselect(','.join(CLASSNAMES.keys()))
-    return {}
+    items = html.cssselect(','.join(CLASSNAMES.keys()))
+    return {'items': [parse_item(item) for item in items]}
 
 #    context = etree.iterparse(StringIO(xml))
 #    >>> for action, elem in context:

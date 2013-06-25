@@ -1,1 +1,16 @@
+.*
+!.gitignore
+
+/bin
+/build
+/dist
+/docs/_build
+/include
+/lib
+/local
+/man
+/share
+/src
+
 *.pyc
+*.pyo

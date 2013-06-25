@@ -2,7 +2,7 @@ import os, json
 
 import nose.tools as n
 
-import ufs2
+import ufs2.ufs2 as ufs2
 
 def test_stuff():
     CASEDIR = os.path.join("tests", "support", "cases")
